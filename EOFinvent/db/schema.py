@@ -48,8 +48,15 @@ class InventoryItem(Base):
     acquired = Column(Date)
     user_responsible = Column(Integer, ForeignKey("users.id"))
     
+    serialno = Column(String)
+    manufacturer = Column(String)
     category = Column(Integer, ForeignKey("categories.id"))
     location = Column(Integer, ForeignKey("locations.id"))
+    
+    sched_maintenance = Column(Date)
+    last_maintenance = Column(Date)
+    
+    notes = Column(String)
     
     user_rel = relationship("User", back_populates="items")
     category_rel = relationship("InventoryCategories", back_populates="items")
