@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="/static/EOFdefault.css" type="text/css">
+    <title>EOF Inventory system </title>
+    </head>
+    
+    <body>
+    <div class="navigation">
+        <a href="/" class="navigation_link"> Inventory </a>
+        <a href="/add" class="navigation_link"> Add Item </a>
+        <a href="https://testing.eof.org.uk" class="navigation_link"> EOF home </a>
+    </div>
+    
+    <h1 class="page_title"> Add Item </h1>
+
+    <div class="main">
+        <h2> test text</h2>
+        
+        <em> Required Fields marked with * </em>
+        
+        
+        {% block content %}
+        
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+        
+        
+            {% for field in form %}
+                
+            <p>
+            {% if not field.flags.hidden  and field.type != "SubmitField" %}
+            {{field.label}}: &nbsp {{field}} {%if field.flags.required %}*{%endif%}
+            {% for error in form.name.errors %}
+            <span class="error_text"> [{{error}}] </span>
+            {% endfor %}
+            {% endif %}
+            </p>
+            
+            {% endfor %}
+            
+            
+            
+            
+            <p> {{ form.submit() }} </p>
+        
+        </form>
+        {% endblock %}
+        
+        
+    </div>
+    
+    </body>
+
+</html>

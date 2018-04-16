@@ -10,6 +10,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    padding-left: 50px;
     padding-top: 20px;
     position: fixed;
 }
@@ -23,6 +24,17 @@ body {
     background-color: white;
     
 }    
+
+.page_title {
+    padding-top: 20px;
+    padding-left: 20%;
+    top: 0;
+    background-color: #4fb1ba;
+}
+
+.error_text {
+    color: red;
+}
 
 .main {
     margin-left: 20%;

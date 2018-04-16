@@ -23,11 +23,25 @@ class Provenance(enum.Enum):
     LongTermLoan = 3
     ShortTermLoan = 4
 
+class Status(enum.Enum):
+    Operating = 1
+    Broken = 2
+    
+class Training(enum.Enum):
+    NotRequired = 1
+    Induction = 2
+    Specific = 3
+
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, Sequence("userid_seq"), primary_key=True)
     name = Column(String)
     email = Column(String)
+    perm_add = Column(Boolean)
+    perm_delete_own = Column(Boolean)
+    perm_delete_others = Column(Boolean)
+    perm_edit_own = Column(Boolean)
+    perm_delete_others = Column(Boolean)
 
 class InventoryCategories(Base):
     __tablename__ = "categories"
@@ -37,7 +51,7 @@ class InventoryCategories(Base):
 class InventoryLocations(Base):
     __tablename__ = "locations"
     id = Column(Integer, primary_key=True)
-
+    name = Column(String)
 
 class InventoryItem(Base):
     __tablename__ = "items"
@@ -47,6 +61,7 @@ class InventoryItem(Base):
     name = Column(String)
     acquired = Column(Date)
     user_responsible = Column(Integer, ForeignKey("users.id"))
+    owner = Column(String)
     
     serialno = Column(String)
     manufacturer = Column(String)
