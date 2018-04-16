@@ -15,6 +15,8 @@ setup(
       author="Dan Weatherill",
       packages=find_packages(),
       install_requires=[
-              "SQLAlchemy"
+              "SQLAlchemy",
+              "flask",
+              "flask-WTF"
               ]
       )
