@@ -1,0 +1,30 @@
+body {
+
+}
+
+.navigation {
+    background-color: #4fb1ba;
+    list-style-type: none;
+    display: block;
+    width: 10%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    position: fixed;
+}
+
+
+.navigation_link {
+    display : block;    
+}
+
+.navigation_link:hover {
+    background-color: white;
+    
+}    
+
+.main {
+    margin-left: 20%;
+
+}
