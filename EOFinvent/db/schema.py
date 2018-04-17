@@ -23,14 +23,35 @@ class Provenance(enum.Enum):
     LongTermLoan = 3
     ShortTermLoan = 4
 
+PROVENANCE_DESCRIPTIONS = {
+        Provenance.Purchased : "Purchased",
+        Provenance.Donated : "Donated",
+        Provenance.LongTermLoan : "Long Term Loan",
+        Provenance.ShortTermLoan : "Short Term Loan"
+        }
+
+
+
 class Status(enum.Enum):
     Operating = 1
     Broken = 2
+    
+STATUS_DESCRIPTIONS = {
+        Status.Operating : "Working",
+        Status.Broken : "Broken"
+}
     
 class Training(enum.Enum):
     NotRequired = 1
     Induction = 2
     Specific = 3
+
+TRAINING_DESCRIPTIONS = {
+        Training.NotRequired : "No Training Requried",
+        Training.Induction : "Covered In General Induction",
+        Training.Specific : "Specific Training Required" 
+}
+
 
 class User(Base):
     __tablename__ = "users"

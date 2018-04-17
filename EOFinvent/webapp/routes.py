@@ -10,6 +10,7 @@ from flask import render_template, flash, redirect
 from webapp import webapp
 from webapp.forms import AddForm
 
+
 @webapp.route('/')
 @webapp.route('/index')
 def index():

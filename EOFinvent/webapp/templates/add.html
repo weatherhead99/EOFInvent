@@ -31,7 +31,7 @@
             <p>
             {% if not field.flags.hidden  and field.type != "SubmitField" %}
             {{field.label}}: &nbsp {{field}} {%if field.flags.required %}*{%endif%}
-            {% for error in form.name.errors %}
+            {% for error in field.errors %}
             <span class="error_text"> [{{error}}] </span>
             {% endfor %}
             {% endif %}
